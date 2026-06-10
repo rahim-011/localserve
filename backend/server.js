@@ -8,6 +8,11 @@ import { contactRouter } from './routers/contactRouter.js';
 import { bookingRouter } from './routers/bookingRouter.js';
 import aj from './config/arcjet.js';
 import path from 'path'
+import { fileURLToPath } from 'url';
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -61,9 +66,10 @@ app.use('/api/booking',bookingRouter);
 app.use('/api/contact',contactRouter);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/dist'));
+    app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve('frontend', 'dist', 'index.html'));
+        res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
     });
 }
 
