@@ -1,6 +1,6 @@
 import express from 'express'
 import { signUpUser,loginUser, getUserData,verifyNewData,changeSettings,resendOtp } from '../controllers/authController.js';
-import tokenValidator from '../middlwares/authMiddlware.js';
+import tokenValidator from '../middlewares/authMiddleware';
 
 export const authRouter  = express.Router();
 

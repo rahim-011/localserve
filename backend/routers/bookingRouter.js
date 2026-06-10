@@ -1,5 +1,5 @@
 import express from 'express'
-import tokenValidator from '../middlewares/authMiddleware.js';
+import tokenValidator from '../middlewares/authMiddleware';
 import {addBooking,deleteBooking,getUserBookings} from '../controllers/bookingController.js';
 
 export const bookingRouter = express.Router();
