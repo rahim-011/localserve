@@ -19,7 +19,6 @@ app.use(helmet());
 app.use(cors({
     origin: [
         'https://localserve.vercel.app',                   
-        
     ],
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],

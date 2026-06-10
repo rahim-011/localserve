@@ -38,16 +38,16 @@ export default function Register() {
     }
 
     return (
-        <main className='flex justify-center items-center min-h-screen bg-dark-blue'>
-            <Link to="/" className="flex items-center gap-1 absolute top-6 left-6 text-sm text-white bg-blue-900 font-bold rounded-2xl p-2  hover:brightness-115  border  border-white/10">
-                <ArrowBigLeft size={20}/> Back to Home
+        <main className='flex justify-center items-center min-h-screen bg-dark-blue px-4 py-6 md:px-0 md:py-0'>
+            <Link to="/" className="flex items-center gap-1 fixed top-4 left-4 md:absolute md:top-6 md:left-6 text-xs md:text-sm text-white bg-blue-900 font-bold rounded-2xl p-2 hover:brightness-115 border border-white/10 z-50">
+                <ArrowBigLeft size={16} className='md:w-5 md:h-5'/> Back
             </Link>
-            <div className="w-full max-w-5xl h-[620px] flex bg-[#1a1d29] border border-[#25293c] rounded-2xl overflow-hidden relative  shadow-2xl shadow-black" data-aos='fade-up' data-aos-easing='ease-out-back'>
+            <div className="w-full max-w-5xl md:h-[620px] h-auto flex flex-col md:flex-row bg-[#1a1d29] border border-[#25293c] rounded-2xl overflow-hidden relative shadow-2xl shadow-black" data-aos='fade-up' data-aos-easing='ease-out-back'>
                 
-                <form className={`p-9 flex flex-col w-full md:w-1/2 absolute top-0 bottom-0 transition-all ease-in-out duration-500 ${hasAccount ? 'left-0 opacity-100 z-10' : 'left-1/2 opacity-0 z-0 pointer-events-none'}`} onSubmit={handleLogin}>
-                    <h1 className='text-white font-bold text-5xl mb-2'>Welcome Back</h1>
-                    <p className='text-text-darker font-medium mb-8'>Sign up with your localServe account.</p>
-                    <div className='flex flex-col gap-3 mb-8'>
+                <form className={`p-6 md:p-9 flex flex-col w-full md:w-1/2 md:absolute md:top-0 md:bottom-0 transition-all ease-in-out duration-500 ${hasAccount ? 'md:left-0 md:opacity-100 md:z-10' : 'md:left-1/2 md:opacity-0 md:z-0 md:pointer-events-none'} ${!hasAccount && 'hidden md:block'}`} onSubmit={handleLogin}>
+                    <h1 className='text-white font-bold text-3xl md:text-5xl mb-2'>Welcome Back</h1>
+                    <p className='text-text-darker font-medium mb-6 md:mb-8 text-sm md:text-base'>Sign up with your localServe account.</p>
+                    <div className='flex flex-col gap-3 mb-6 md:mb-8'>
                         <div className='flex flex-col relative group'>
                             <input 
                                 type="text" 
@@ -89,16 +89,16 @@ export default function Register() {
                             </label>
                         </div>
 
-                        <div className='flex items-center gap-2 justify-between px-2'>
+                        <div className='flex items-center gap-2 justify-between px-2 text-xs md:text-sm'>
                             <span className='flex items-center gap-1'>
                                 <input type="checkbox" name="remember" id="remember" onClick={()=>setRememberMe(true)}/>
-                                <label htmlFor="remember" className='text-text-darker text-[0.9rem]'>Remember for 30 days</label>
+                                <label htmlFor="remember" className='text-text-darker'>Remember for 30 days</label>
                             </span>
-                            <span><a className='text-blue-500 font-medium text-[0.9rem] cursor-pointer'>Forgot password?</a></span>
+                            <span><a className='text-blue-500 font-medium cursor-pointer'>Forgot password?</a></span>
                         </div>
                     </div>
-                    <button className='text-center bg-[#1c2642] border border-[#3b82f6] text-white hover:bg-[#233054] transition-all rounded-[5px] p-3 mb-5'  type='submit'>Login In</button>
-                    <div className='text-center mt-6 text-[0.9rem]'>
+                    <button className='text-center bg-[#1c2642] border border-[#3b82f6] text-white hover:bg-[#233054] transition-all rounded-[5px] p-3 mb-5 text-sm md:text-base'  type='submit'>Login In</button>
+                    <div className='text-center mt-6 text-xs md:text-sm'>
                         <span className='text-[#94a3b8]'>Don't have an account? </span>
                         <button type="button" className='text-[#3b82f6] font-medium hover:text-[#2563eb] underline underline-offset-4 transition-colors duration-200' onClick={() => setHasAccount(false)}>
                             Sign Up
@@ -106,10 +106,10 @@ export default function Register() {
                     </div>
                 </form>
 
-                <form className={`p-9 flex flex-col w-full md:w-1/2 absolute top-0 bottom-0 transition-all ease-in-out duration-500 ${!hasAccount ? 'left-1/2 opacity-100 z-10' : 'left-0 opacity-0 z-0 pointer-events-none'}`} onSubmit={handleSignUp}>
-                    <h1 className='text-white font-bold text-5xl mb-2'>Create an account</h1>
-                    <p className='text-text-darker font-medium mb-8'>Sign Up for free.</p>
-                    <div className='flex flex-col gap-3 mb-8'>
+                <form className={`p-6 md:p-9 flex flex-col w-full md:w-1/2 md:absolute md:top-0 md:bottom-0 transition-all ease-in-out duration-500 ${!hasAccount ? 'md:left-1/2 md:opacity-100 md:z-10' : 'md:left-0 md:opacity-0 md:z-0 md:pointer-events-none'} ${hasAccount && 'hidden md:block'}`} onSubmit={handleSignUp}>
+                    <h1 className='text-white font-bold text-3xl md:text-5xl mb-2'>Create an account</h1>
+                    <p className='text-text-darker font-medium mb-6 md:mb-8 text-sm md:text-base'>Sign Up for free.</p>
+                    <div className='flex flex-col gap-3 mb-6 md:mb-8'>
                         <div className='flex flex-col relative group'>
                             <input 
                                 type="text" 
@@ -188,11 +188,11 @@ export default function Register() {
                             >
                                 Confirm Password
                             </label>
-                           {isSamePass === false && <span className='italic text-[0.9rem] text-red-500 mt-2'>Passwords do not match</span>}
+                           {isSamePass === false && <span className='italic text-xs md:text-sm text-red-500 mt-2'>Passwords do not match</span>}
                         </div>
                     </div>
-                    <button className='text-center bg-[#1c2642] border border-[#3b82f6] text-white hover:bg-[#233054] transition-all rounded-[5px] p-3 mb-5' type='submit'>Sign Up</button>
-                    <div className='text-center mt-6 text-[0.9rem]'>
+                    <button className='text-center bg-[#1c2642] border border-[#3b82f6] text-white hover:bg-[#233054] transition-all rounded-[5px] p-3 mb-5 text-sm md:text-base' type='submit'>Sign Up</button>
+                    <div className='text-center mt-6 text-xs md:text-sm'>
                         <span className='text-[#94a3b8]'>Already have an account? </span>
                         <button type="button" className='text-[#3b82f6] font-medium hover:text-[#2563eb] underline underline-offset-4 transition-colors duration-200' onClick={() => setHasAccount(true)}>
                             Sign In
@@ -200,7 +200,7 @@ export default function Register() {
                     </div>
                 </form>
 
-                <div className={`absolute overflow-hidden hidden z-30 w-1/2 top-0 bottom-0 md:block transition-all ease-in-out duration-500 ${hasAccount ? 'left-1/2' : 'left-0'}`}>
+                <div className={`hidden md:block absolute overflow-hidden z-30 w-1/2 top-0 bottom-0 transition-all ease-in-out duration-500 ${hasAccount ? 'left-1/2' : 'left-0'}`}>
                     <img 
                         alt='Electrecian' 
                         src={ElectrecianImg} 
