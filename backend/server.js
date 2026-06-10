@@ -21,8 +21,8 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors({
     origin: [
-        'https://localserve-git-main-rahim4.vercel.app',
-        'https://localserve.vercel.app'                   
+        'https://localserve.vercel.app',                   
+        'https://localserve-git-main-rahim4.vercel.app'
     ],
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
