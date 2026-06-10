@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
-        ? 'https://localserve-dedd.onrender.com' 
+        ? 'localserve-lpknx3dfj-rahim4.vercel.app' 
         : 'http://localhost:5173',
     credentials: true
 }));
