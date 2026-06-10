@@ -48,13 +48,12 @@ app.use(async (req,res,next)=>{
         if (decision.results.some(result => result.isBot() && result.isSpoofed())){
             return res.status(403).json({error: 'Spoofed bot detected!'})
         }
-        // next()
+        next()
     }
     catch(error){
         res.status(500).json({error:'Something went wrong!'})
         console.log('Something went wrong!',error)
     }
-    next();
 })
 
 
