@@ -7,6 +7,7 @@ import { servicesRouter } from './routers/servicesRouter.js';
 import { contactRouter } from './routers/contactRouter.js';
 import { bookingRouter } from './routers/bookingRouter.js';
 import aj from './config/arcjet.js';
+import path from 'path'
 
 dotenv.config();
 
@@ -59,7 +60,12 @@ app.use('/api/services',servicesRouter);
 app.use('/api/booking',bookingRouter);
 app.use('/api/contact',contactRouter);
 
-
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/dist'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve('frontend', 'dist', 'index.html'));
+    });
+}
 
 
 app.listen(PORT,()=>{
