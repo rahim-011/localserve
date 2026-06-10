@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root{
+  --nav-bg:#1D2738;
+  --text-col:#F1F5F9;
+  --text-darker:#94a3b8;
+  --main-bg:#0F172A;
+  --hover-btn-col:#334155;
+  --hover-SBtn-col:#287d6a;
+  --hero-bg-main: #0b111e;
+  --hero-glow: #1e293b;
+  --active-btn:#3b82f6;
+  --logo-circle-gradient: linear-gradient(to top right, #818cf8, #fb923c, #4ade80);
+  --logo-text-gradient: linear-gradient(to right, #60a5fa, #f97316, #4ade80);
+  --award-bg:#10b981;
+  --shield-bg:#3b82f6;
+  --clock-bg:#f97316;
+  --dark-blue:#0f172a;
+  --emerg-col:#c95f62;
+}
+
+@theme{
+    --font-sans : "Plus Jakarta Sans", sans-serif;
+    --color-nav-bg:var(--nav-bg);
+    --color-text:var(--text-col);
+    --color-text-darker:var(--text-darker);
+    --color-main-bg:var(--main-bg);
+    --color-hover-bg:var(--hover-btn-col);
+    --color-hover-Sbg:var(--hover-SBtn-col);
+    --color-active-Btn:var(--active-Btn);
+    --color-shield-bg:var(--shield-bg);
+    --color-clock-bg:var(--clock-bg);
+    --color-award-bg:var(--award-bg);
+    --color-dark-blue:var(--dark-blue);
+    --color-emerg-red:var(--emerg-col);
+    --background-image-logo-gradient: var(--logo-text-gradient);
+    --background-image-logo-circle: var(--logo-circle-gradient);
+    --background-image-hero-combined-bg: 
+    linear-gradient(to right, rgba(96, 165, 250, 0.1), rgba(249, 115, 22, 0.1), rgba(74, 222, 128, 0.1)), 
+    radial-gradient(circle at 50% 40%, #1e2638 0%, #0f172a 100%);
+}
+
+@layer base {
+  body {
+    @apply min-h-screen;
+    @apply bg-dark-blue;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 20px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-dark-blue) !important; 
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #3b82f6 !important;
+    border-radius: 999px !important;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa !important;
+  }
+}
+
+@layer utilities{
+  a.active{
+    @apply bg-shield-bg
+  }
+  a.active:hover{
+    @apply bg-shield-bg
+  }
+}
