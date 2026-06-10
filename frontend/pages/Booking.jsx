@@ -144,7 +144,7 @@ export default function Booking(){
                     <span className={`w-10 h-10 rounded-full  text-slate-400 flex items-center justify-center font-bold shrink-0 ${step === 3 ? 'bg-shield-bg animate-pulse' : 'bg-slate-700 animate-none'}`}>3</span>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-6 mb-15 items-start'>
-                    <div className='flex flex-col gap-3 bg-nav-bg rounded-2xl p-6 text-white border border-white/10 w-full overflow-hidden'>
+                    <div className='flex flex-col gap-3 bg-nav-bg rounded-2xl p-4 text-white border border-white/10 w-full overflow-hidden'>
                         {step === 1 && <>
                         <h2 className="font-bold text-[1.6rem]">Select Service & Time</h2>
                         <div className="flex flex-col gap-4 mb-4 " data-aos='fade-right' data-aos-duration='400' >
