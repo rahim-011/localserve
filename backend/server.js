@@ -20,9 +20,10 @@ app.set('trust proxy', 1);
 app.use(express.json());
 app.use(helmet());
 app.use(cors({
-    origin: process.env.NODE_ENV === 'production' 
-        ? 'https://localserve-bh8pecynf-rahim4.vercel.app'
-        : 'http://localhost:5173',
+    origin: [
+        'https://localserve-git-main-rahim4.vercel.app',
+        'https://localserve.vercel.app'                   
+    ],
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
