@@ -3,7 +3,7 @@
     "concurrently": "^9.2.1"
   },
   "scripts": {
-  "build": "npm install && cd client && npm install && npm run build",
+  "build": "npm install && cd frontend && npm install && npm run build",
   "start": "node backend/server.js"
 },
   "dependencies": {
