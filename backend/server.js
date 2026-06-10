@@ -17,9 +17,11 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(helmet());
 app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials:true
-}))
+    origin: process.env.NODE_ENV === 'production' 
+        ? 'https://localserve-dedd.onrender.com' 
+        : 'http://localhost:5173',
+    credentials: true
+}));
 
 
 
@@ -56,6 +58,8 @@ app.use('/api/auth',authRouter);
 app.use('/api/services',servicesRouter);
 app.use('/api/booking',bookingRouter);
 app.use('/api/contact',contactRouter);
+
+
 
 
 app.listen(PORT,()=>{
