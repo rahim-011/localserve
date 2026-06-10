@@ -21,9 +21,11 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors({
     origin: process.env.NODE_ENV === 'production' 
-        ? 'https://localserve-bh8pecynf-rahim4.vercel.app/' 
+        ? 'https://localserve-bh8pecynf-rahim4.vercel.app'
         : 'http://localhost:5173',
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 
