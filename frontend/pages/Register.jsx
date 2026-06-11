@@ -4,6 +4,7 @@ import ElectrecianImg from '../src/assets/Electrecian.webp'
 import {Eye ,EyeOff,ArrowBigLeft} from 'lucide-react'
 import PlumberImg from '../src/assets/Plumber.webp'
 import useAuthStore from '../store/authStore'
+import toast from 'react-hot-toast'
 
 export default function Register() {
     const [hasAccount, setHasAccount] = useState(true);
@@ -31,9 +32,32 @@ export default function Register() {
         const data = Object.fromEntries(formData.entries());
         const {password,username,email} = data;
         const result = await signUp(username,email,password);
-        console.log(result);
         if (result.success){
-            navigate('/');
+            toast.success('Accont created successfully',{
+                id: 'register-success',
+                    style: {
+                        background: '#111625',
+                        color: '#fff',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        borderRadius: '12px',
+                    },
+                    iconTheme: {
+                        primary: '#10B981',
+                        secondary: '#fff',
+                    }
+            })
+            setHasAccount(true);
+        }
+        else{
+            toast.error('Something went wrong!',{
+                id:'register-error',
+                 style: {
+                        background: '#111625',
+                        color: '#fff',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        borderRadius: '12px',
+                },
+            })
         }
     }
 
