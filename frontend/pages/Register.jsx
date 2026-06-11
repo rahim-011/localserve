@@ -107,7 +107,7 @@ export default function Register() {
                 </form>
 
                 <form className={`p-6 md:p-9 flex flex-col w-full md:w-1/2 md:absolute md:top-0 md:bottom-0 transition-all ease-in-out duration-500 ${!hasAccount ? 'md:left-1/2 md:opacity-100 md:z-10' : 'md:left-0 md:opacity-0 md:z-0 md:pointer-events-none'} ${hasAccount && 'hidden md:block'}`} onSubmit={handleSignUp}>
-                    <h1 className='text-white font-bold text-3xl md:text-5xl mb-2'>Create an account</h1>
+                    <h1 className='text-white font-bold text-3xl md:text-5xl mb-2 whitespace-nowrap'>Create an account</h1>
                     <p className='text-text-darker font-medium mb-6 md:mb-8 text-sm md:text-base'>Sign Up for free.</p>
                     <div className='flex flex-col gap-3 mb-6 md:mb-8'>
                         <div className='flex flex-col relative group'>

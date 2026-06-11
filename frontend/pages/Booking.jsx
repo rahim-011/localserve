@@ -130,7 +130,7 @@ export default function Booking(){
 
 
     return(
-        <section className='w-full bg-dark-blue flex flex-col items-center p-5'>
+        <section className='w-full bg-dark-blue flex flex-col items-center p-2'>
             <div className='flex flex-col gap-5 w-full max-w-7xl items-center pt-6'>
                 <div className='flex flex-col gap-5 items-center mb-8'>
                     <h1 className='text-white font-bold text-4xl'>Book Your Service</h1>
