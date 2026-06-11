@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors({
     origin: [
-        'https://localserve.vercel.app',
+        'https://localserve-five.vercel.app',
         'http://localhost:5173'                   
     ],
     credentials: true,
