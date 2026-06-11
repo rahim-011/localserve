@@ -1,15 +1,17 @@
 {
-  "devDependencies": {
-    "concurrently": "^9.2.1"
-  },
+  "name": "my-project",
+  "version": "1.0.0",
   "scripts": {
-  "start": "node backend/server.js"
-},
+    "dev": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\""
+  },
   "dependencies": {
     "@arcjet/inspect": "^1.5.0",
     "@arcjet/node": "^1.5.0",
     "nodemailer": "^8.0.10",
     "react": "^19.2.7",
     "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }
